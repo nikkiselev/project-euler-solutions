@@ -1,0 +1,26 @@
+{
+  "name": "project-euler-solutions",
+  "version": "1.0.0",
+  "description": "Project Euler Solutions",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikkiselev/project-euler-solutions.git"
+  },
+  "keywords": [
+    "euler"
+  ],
+  "author": "Nikolai Kiselev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nikkiselev/project-euler-solutions/issues"
+  },
+  "homepage": "https://github.com/nikkiselev/project-euler-solutions#readme",
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
+}
