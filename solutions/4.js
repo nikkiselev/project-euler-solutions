@@ -1,6 +1,8 @@
+// https://projecteuler.net/problem=4
+
 const isPalindromic = number => number.toString() === number.toString().split('').reverse().join('');
 
-function largestPalindromeProduct(n) {
+const largestPalindromeProduct = (n) => {
   const max = +'9'.toString().repeat(n);
   let result = 0;
 
@@ -13,7 +15,6 @@ function largestPalindromeProduct(n) {
   }
 
   return result;
-}
+};
 
-console.log(largestPalindromeProduct(2)); // 9009
-console.log(largestPalindromeProduct(3)); // 906609
+console.log(largestPalindromeProduct(3));

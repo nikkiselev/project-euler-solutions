@@ -1,4 +1,6 @@
-function smallestMult(n) {
+// https://projecteuler.net/problem=5
+
+const smallestMultiple = (n) => {
   const range = [...Array(n + 1).keys()].slice(1);
 
   let i = 1;
@@ -10,10 +12,6 @@ function smallestMult(n) {
   }
 
   return i;
-}
+};
 
-console.log(smallestMult(5)); // should return 60.
-console.log(smallestMult(7)); // should return 420.
-console.log(smallestMult(10)); //  should return 2520.
-console.log(smallestMult(13)); // should return 360360.
-console.log(smallestMult(20)); // should return 232792560.
+console.log(smallestMultiple(20));
