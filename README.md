@@ -1,1 +1,0 @@
-# Javascript Project Euler Solutions
