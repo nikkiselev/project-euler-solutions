@@ -1,1 +1,1 @@
-# project-euler-solutions
+# Javascript Project Euler Solutions
