@@ -1,11 +1,9 @@
 // https://projecteuler.net/problem=12
 
 function firstTriangleNumberThatHasMoreThan500Factors() {
-  const numbers = [1];
 
   for (let i = 2; true; i++) {
-    const n = numbers[numbers.length - 1] + i;
-    numbers.push(n);
+    const n = i * (i + 1) / 2;
 
     const numberOfFactorsFor = (num) => {
       const max = Math.floor(Math.sqrt(num));
