@@ -3,5 +3,6 @@ module.exports = {
     "rules" : {
       "no-plusplus": "off",
       "no-console": "off",
+      "no-trailing-spaces": "off",
     }
 };
