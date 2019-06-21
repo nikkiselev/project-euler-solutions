@@ -4,5 +4,6 @@ module.exports = {
       "no-plusplus": "off",
       "no-console": "off",
       "no-trailing-spaces": "off",
+      "padded-blocks": "off",
     }
 };
