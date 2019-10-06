@@ -5,5 +5,6 @@ module.exports = {
       "no-console": "off",
       "no-trailing-spaces": "off",
       "padded-blocks": "off",
+      "no-continue": "off",
     }
 };
