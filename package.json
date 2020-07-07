@@ -7,6 +7,16 @@
     "lint:fix": "eslint solutions --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json}": [
+      "npm run format"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nikkiselev/project-euler-solutions.git"
@@ -23,6 +33,8 @@
   "devDependencies": {
     "eslint": "^5.15.3",
     "eslint-plugin-import": "^2.16.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
     "prettier": "^2.0.5"
   }
 }
