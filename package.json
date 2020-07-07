@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Project Euler Solutions",
   "scripts": {
+    "format": "prettier --write \"**/*.{js,json,ts}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +22,7 @@
   "devDependencies": {
     "eslint": "^5.15.3",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0"
+    "eslint-plugin-import": "^2.16.0",
+    "prettier": "^2.0.5"
   }
 }

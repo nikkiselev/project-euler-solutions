@@ -1,33 +1,32 @@
 // https://projecteuler.net/problem=21
 
-
 /**
  * Get a sum of numbers less than n which divide evenly into n.
  * @param {Number} n
  * @returns {Number}
  */
 function sumOfDivisors(n) {
-  let sum = 0;
+  let sum = 0
 
   for (let i = 1; i < n; i++) {
     if (n % i === 0) {
-      sum += i;
+      sum += i
     }
   }
 
-  return sum;
+  return sum
 }
 
 /**
- * Get amicable numbers for a given number. 
+ * Get amicable numbers for a given number.
  * @param {Number} a
  * @returns {[]} empty if doesn't have pair
  */
 function getAmicableNumbers(a) {
-  const b = sumOfDivisors(a);
-  const c = sumOfDivisors(b);
+  const b = sumOfDivisors(a)
+  const c = sumOfDivisors(b)
 
-  return a === c && a !== b ? [b, c] : [];
+  return a === c && a !== b ? [b, c] : []
 }
 
 /**
@@ -36,16 +35,15 @@ function getAmicableNumbers(a) {
  * @returns {Number}
  */
 function sumOfAmicableNumbersUnder(max) {
-  const numbers = [];
+  const numbers = []
 
   for (let i = 1; i < max; i++) {
     if (!numbers.includes(i)) {
-      numbers.push(...getAmicableNumbers(i));
+      numbers.push(...getAmicableNumbers(i))
     }
   }
 
-  return numbers.reduce((a, b) => a + b);
-  
+  return numbers.reduce((a, b) => a + b)
 }
 
-console.log(sumOfAmicableNumbersUnder(10000));
+console.log(sumOfAmicableNumbersUnder(10000))

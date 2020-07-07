@@ -2,8 +2,8 @@
 
 /**
  * Convert a given number to a word.
- * 
- * @param {Number} number 
+ *
+ * @param {Number} number
  * @returns {String}
  */
 function numberToWords(number) {
@@ -37,15 +37,15 @@ function numberToWords(number) {
     90: 'ninety',
     100: 'hundred',
     1000: 'thousand',
-  };
+  }
 
   /**
    * Convert 2 digit number to word.
    * @returns {String}
    */
   function twoDigitNumberToWord(num) {
-    const firstNumber = numbers[`${num[0]}0`];
-    return num[1] === '0' ? firstNumber : firstNumber + numberToWords(num[1]);
+    const firstNumber = numbers[`${num[0]}0`]
+    return num[1] === '0' ? firstNumber : firstNumber + numberToWords(num[1])
   }
 
   /**
@@ -53,64 +53,62 @@ function numberToWords(number) {
    * @returns {String}
    */
   function threeDigitNumberToWord(num) {
-    const firstNumber = numberToWords(num[0]) + numbers[100];
+    const firstNumber = numberToWords(num[0]) + numbers[100]
 
     if (num[1] === '0' && num[2] === '0') {
-      return firstNumber;
+      return firstNumber
     }
 
-    return `${firstNumber}and${numberToWords(num[1] + num[2])}`; 
+    return `${firstNumber}and${numberToWords(num[1] + num[2])}`
   }
 
   /**
    * Convert 4 digit number to word.
    * @returns {String}
    */
-  const fourDigitNumberToWord = num => numberToWords(num[0]) + numbers[num];
+  const fourDigitNumberToWord = (num) => numberToWords(num[0]) + numbers[num]
 
-  let num = Number.parseInt(number, 10);
+  let num = Number.parseInt(number, 10)
 
   if (num < 20) {
-    return numbers[num];
+    return numbers[num]
   }
 
-  num = num.toString(10);
+  num = num.toString(10)
 
   const digitsInNumber = {
     2: twoDigitNumberToWord,
     3: threeDigitNumberToWord,
     4: fourDigitNumberToWord,
-  };
+  }
 
-  return digitsInNumber[num.length](num);
+  return digitsInNumber[num.length](num)
 }
 
-
 /**
- * 
- * @param {Number} from 
- * @param {Number} to 
+ *
+ * @param {Number} from
+ * @param {Number} to
  * @returns {[String]}
  */
 function numbersInWords(from, to) {
-
   /**
    * Create a range.
-   * 
-   * @param {Number} min 
-   * @param {Number} max 
+   *
+   * @param {Number} min
+   * @param {Number} max
    * @returns {[Number]} result
    */
   function range(min, max) {
-    const result = [];
+    const result = []
     for (let i = min; i <= max; i++) {
-      result.push(i);
+      result.push(i)
     }
 
-    return result;
+    return result
   }
 
-  return range(from, to).map(n => numberToWords(n));
+  return range(from, to).map((n) => numberToWords(n))
 }
 
-console.log(numbersInWords(1, 1000).join('').length);
+console.log(numbersInWords(1, 1000).join('').length)

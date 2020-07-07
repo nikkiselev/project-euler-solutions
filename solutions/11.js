@@ -22,8 +22,8 @@ const grid = [
   ['20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54'],
   ['01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48'],
 ]
-  .map(row => row[0].split(' '))
-  .map(row => row.map(cell => parseInt(cell, 10)));
+  .map((row) => row[0].split(' '))
+  .map((row) => row.map((cell) => parseInt(cell, 10)))
 
 /**
  * Greatest product of four adjacent numbers.
@@ -31,20 +31,20 @@ const grid = [
  * @param {[[Number]]} grid
  */
 function greatestProductOfFourAdjacentNumbersInTheSameDirection(grid) {
-  let result = 0;
+  let result = 0
 
   for (let i = 0; i < grid.length; i++) {
     for (let j = 0; j < grid[i].length; j++) {
-      let right = 0;
-      let down = 0;
-      let downRight = 0;
-      let downLeft = 0;
+      let right = 0
+      let down = 0
+      let downRight = 0
+      let downLeft = 0
 
       /**
        * ➡️ ➡️ ➡️ ➡️
        */
       if (j < grid[i].length - 4) {
-        right = grid[i][j] * grid[i][j + 1] * grid[i][j + 2] * grid[i][j + 3];
+        right = grid[i][j] * grid[i][j + 1] * grid[i][j + 2] * grid[i][j + 3]
       }
 
       /**
@@ -54,7 +54,7 @@ function greatestProductOfFourAdjacentNumbersInTheSameDirection(grid) {
        * ⬇️
        */
       if (i < grid.length - 4) {
-        down = grid[i][j] * grid[i + 1][j] * grid[i + 2][j] * grid[i + 3][j];
+        down = grid[i][j] * grid[i + 1][j] * grid[i + 2][j] * grid[i + 3][j]
       }
 
       /**
@@ -64,7 +64,11 @@ function greatestProductOfFourAdjacentNumbersInTheSameDirection(grid) {
        * . . . ↘️
        */
       if (j < grid[i].length - 4 && i < grid.length - 4) {
-        downRight = grid[i][j] * grid[i + 1][j + 1] * grid[i + 2][j + 2] * grid[i + 3][j + 3];
+        downRight =
+          grid[i][j] *
+          grid[i + 1][j + 1] *
+          grid[i + 2][j + 2] *
+          grid[i + 3][j + 3]
       }
 
       /**
@@ -74,18 +78,22 @@ function greatestProductOfFourAdjacentNumbersInTheSameDirection(grid) {
        * ↙️ . . .
        */
       if (j > 2 && i < grid.length - 4) {
-        downLeft = grid[i][j] * grid[i + 1][j - 1] * grid[i + 2][j - 2] * grid[i + 3][j - 3];
+        downLeft =
+          grid[i][j] *
+          grid[i + 1][j - 1] *
+          grid[i + 2][j - 2] *
+          grid[i + 3][j - 3]
       }
 
-      const max = Math.max(right, down, downRight, downLeft);
+      const max = Math.max(right, down, downRight, downLeft)
 
       if (max > result) {
-        result = max;
+        result = max
       }
     }
   }
 
-  return result;
+  return result
 }
 
-console.log(greatestProductOfFourAdjacentNumbersInTheSameDirection(grid));
+console.log(greatestProductOfFourAdjacentNumbersInTheSameDirection(grid))
