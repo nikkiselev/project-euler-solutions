@@ -4,6 +4,7 @@
   "description": "Project Euler Solutions",
   "scripts": {
     "format": "prettier --write \"**/*.{js,json,ts}\"",
+    "lint:fix": "eslint solutions --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,7 +22,6 @@
   "homepage": "https://github.com/nikkiselev/project-euler-solutions#readme",
   "devDependencies": {
     "eslint": "^5.15.3",
-    "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
     "prettier": "^2.0.5"
   }
